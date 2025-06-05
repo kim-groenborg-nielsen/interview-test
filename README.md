@@ -1,15 +1,20 @@
 # Identify screenshots
 1. 
-![Screenshoot1](attachments/Screenshot 2025-06-05 at 09.28.04.png)
+![Screenshot 1](attachments/Screenshot_01.png)
+
 
 2. 
-![[Kunder/Novo/Engineer interview/Interview test/attachments/Screenshot 2025-06-05 at 10.10.26.png]]
+![Screenshot 2](attachments/Screenshot_02.png)
+
 
 3. 
-![[Screenshot 2025-06-05 at 10.16.45 1.png]]
+![Screenshot 3](attachments/Screenshot_03.png)
+
 
 4. 
-![[Kunder/Novo/Engineer interview/Interview test/attachments/Screenshot 2025-06-05 at 10.43.53.png]]
+![Screenshot 4](attachments/Screenshot_04.png)
+
 
 5. 
-![[Kunder/Novo/Engineer interview/Interview test/attachments/Screenshot 2025-06-05 at 11.15.00.png]]
+![Screenshot 5](attachments/Screenshot_05.png)
+
