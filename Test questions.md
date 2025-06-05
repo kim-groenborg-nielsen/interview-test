@@ -1,6 +1,6 @@
 # Identify screenshots
 1. 
-![[Kunder/Novo/Engineer interview/Interview test/attachments/Screenshot 2025-06-05 at 09.28.04.png]]
+![attachments/Screenshot 2025-06-05 at 09.28.04.png]
 
 2. 
 ![[Kunder/Novo/Engineer interview/Interview test/attachments/Screenshot 2025-06-05 at 10.10.26.png]]
