@@ -52,7 +52,7 @@
 
 - name: Install conf files
   become: yes
-  ansible.builtin.template:
+  template:
     src: "{{ item }}.conf.j2"
     dest: "{{ nginx_conf_base }}/conf.d/{{ item }}.conf"
     owner: root
