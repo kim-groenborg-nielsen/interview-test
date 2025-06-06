@@ -530,3 +530,64 @@ async def read_client_me(current_client: Client = Depends(get_current_client)):
     """
     return current_client
 ```
+
+## 4th code snippet
+```terraform
+terraform {
+  required_providers {
+    aws = {
+      source            = "hashicorp/aws"
+      version           = "~> 5.97.0"
+    }
+  }
+  backend "s3" {
+        bucket          = "example-state-bucket"
+        encrypt         = true
+        use_lockfile    = true
+  }
+}
+
+provider "aws" {
+    region      = var.region
+}
+
+data "aws_vpc" "default" {
+  tags                =   {
+      "ManagedBy"         = "example_team"
+      "DeploymentMethod"  = "Terraform"
+  }
+}
+
+variable "region" {
+  type                  = string
+  description           = "(required) The AWS region to use"
+}
+
+variable "environment" {
+  type                  = string
+  description           = "(required) The environment to use"
+}
+
+variable "tags" {
+  type                  = map(string)
+  description           = "(optional) A map containing tags to assign to all resources"
+}
+
+resource "aws_security_group" "example_security_group" {
+  name                  = format("%s-security-group", "example_app")
+  description           = "Example security group"
+  vpc_id                = data.aws_vpc.default.id
+  tags                  = var.tags
+}
+
+resource "aws_vpc_security_group_ingress_rule" "allow_ssh_communication" {
+  count                 = var.environment != "PROD" ? 1 : 0
+  from_port             = 22
+  to_port               = 22
+  ip_protocol           = "tcp"
+  cidr_ipv4             = data.aws_vpc.default.cidr_block
+  description           = "Allow SSH access to example nodes"
+
+  security_group_id     = aws_security_group.example_security_group.id
+}
+```
