@@ -591,3 +591,43 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ssh_communication" {
   security_group_id     = aws_security_group.example_security_group.id
 }
 ```
+
+### 5th code snippet
+```html
+<body class="bg-gray-100 p-6 min-h-screen flex flex-col">
+<div id="main-container" class="w-full max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-md flex flex-col">
+    <h1 class="text-2xl font-bold mb-4">GitLab to GitHub migration</h1>
+    <div class="mb-4">
+        <label for="token" class="block text-gray-700">GitLab Private Token:</label>
+        <input type="password" id="token" class="w-full p-2 border border-gray-300 rounded mt-1">
+    </div>
+    <div class="mb-4">
+        <label for="url" class="block text-gray-700">GitLab Project URL:</label>
+        <input type="text" id="url" class="w-full p-2 border border-gray-300 rounded mt-1">
+    </div>
+    <div class="mb-4">
+        <label for="lock_source" class="inline-flex items-center">
+            <input type="checkbox" id="lock_source" class="form-checkbox">
+            <span class="ml-2 text-gray-700">Lock Source</span>
+        </label>
+    </div>
+    <button onclick="submitJob()" class="w-full bg-blue-500 text-white p-2 rounded">Submit</button>
+    <div class="text-gray-700 mt-4">
+        <div class="flex justify-between items-center">
+            <span>Status:</span>
+            <span id="spinner-container" class="flex items-center gap-2 hidden">
+                <span class="heart flex items-center justify-center w-4 h-4" id="heart">
+                    <svg viewBox="0 0 32 29.6" class="w-4 h-4">
+                        <path d="M23.6,0c-2.7,0-5.1,1.3-6.6,3.3C15.5,1.3,13.1,0,10.4,0C4.7,0,0,4.7,0,10.4
+                    c0,6.1,5.4,11.1,13.6,18.3l2.4,2.1l2.4-2.1C26.6,21.5,32,16.5,32,10.4C32,4.7,27.3,0,23.6,0z"
+                      fill="#e25555"/>
+                    </svg>
+                </span>
+                <span class="align-middle">Receiving logs...</span>
+            </span>
+        </div>
+    </div>
+    <div id="status" class="overflow-y-auto border border-gray-300 p-2 mt-2 rounded bg-gray-50 font-mono h-[calc(100vh-445px)]">
+    </div>
+</div>
+```
