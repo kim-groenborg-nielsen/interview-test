@@ -656,3 +656,25 @@ fi
 
 unset env
 ```
+
+### 7th code snippet
+```powershell
+# Prompt for the pattern to filter user names
+$pattern = Read-Host "Enter the pattern to filter user names (wildcards like * allowed)"
+
+# Get users matching the pattern
+$users = Get-ADUser -Filter "Name -like '$pattern'" -Properties Name | 
+    Select-Object Name, SamAccountName, UserPrincipalName
+
+# Show a selection grid
+$selectedUsers = $users | Out-GridView -Title "Select Users to Export" -PassThru
+
+# If users were selected, export to CSV
+if ($selectedUsers) {
+    $csvPath = Read-Host "Enter the path to save the CSV file (e.g., C:\Users\Export\users.csv)"
+    $selectedUsers | Export-Csv -Path $csvPath -NoTypeInformation
+    Write-Host "Exported $($selectedUsers.Count) users to $csvPath"
+} else {
+    Write-Host "No users selected. Nothing was exported."
+}
+```
