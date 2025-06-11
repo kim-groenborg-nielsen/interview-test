@@ -9,4 +9,7 @@
 8. How would you identify high load on a Linux system?
 9. What is you preferred text editor in Linux?
 10. How to find and delete *.log files older than 30 days in /var/log directory structure?
-11. How do you check the status of a Linux service?
+11. How do you check the status of a Linux systemd service?
+12. Name one or more tools for making DNS lookups?
+13. How do you follow the log of a systemd service?
+14. How would you find the mac address of machine IP (e.g. 192.168.10.1) on the same network without logging into the machine?
